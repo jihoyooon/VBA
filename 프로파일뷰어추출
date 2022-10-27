@@ -58,7 +58,7 @@ Application.ScreenUpdating = False
                     Cells.Validation.Delete
                     End With
 
-                    nws.Name = nwb.Worksheets(1).Range("C6").Value
+                    nws.Name = nws.Range("A1")
                     nws.Tab.ColorIndex = xlColorIndexNone
                     nws.Columns("L").Delete
                     nws.Select
@@ -77,7 +77,7 @@ Application.ScreenUpdating = False
                     ActiveCell.Select
                     
                     Application.DisplayAlerts = False
-                    nwb.SaveAs Filename:=myFolder & nwb.Worksheets(1).Range("C5").Value & "_" & nwb.Worksheets(1).Range("F5").Value & "_" & nwb.Worksheets(1).Range("C6").Value & ".xlsx", FileFormat:=xlWorkbookDefault
+                    nwb.SaveAs Filename:=myFolder & nws.Name & ".xlsx", FileFormat:=xlWorkbookDefault
                     nwb.Close
                     Application.DisplayAlerts = True
                 
