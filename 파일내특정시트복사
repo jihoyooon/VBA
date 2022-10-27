@@ -1,4 +1,4 @@
-Sub myFiles()
+Sub Copy()
 
 Dim wb As Workbook
 Dim ws As Worksheet
@@ -8,9 +8,9 @@ Dim rng As Range
 Dim Path As String
 
 Set wb = ThisWorkbook
-Set ws = wb.Worksheets("Position Profile")
+Set ws = wb.Worksheets("Position Profile") '복사할 시트 
 Set rng = ws.Range("G11")
-Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\"
+Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\" '저장폴더경로
 
 For i = 1 To 10
 rng = ws.Range("A" & i)
@@ -35,7 +35,5 @@ nwb.Close
 Application.DisplayAlerts = True
 
 Next i
-
-
 
 End Sub
