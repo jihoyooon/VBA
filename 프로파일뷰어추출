@@ -29,9 +29,10 @@ Application.ScreenUpdating = False
     myFolder = .SelectedItems(1) & "\"
     End With
     Set wb = ThisWorkbook
-    Set ws = wb.Worksheets("★프로파일뷰어")
+    Set ws = wb.Worksheets("★프로파일뷰어") '복사할 시트 
     
-    Set DVCell1 = ws.Range("C5")
+    'DVCell1,2,3: Data Validation이 포함되어 있는 셀 
+    Set DVCell1 = ws.Range("C5") 
     
     Set DVCell2 = ws.Range("F5")
     
