@@ -75,6 +75,7 @@ Application.ScreenUpdating = False
                     
                     ActiveCell = nws.Range("A1").Select
                     ActiveCell.Select
+                    ActiveCell.Delete
                     
                     Application.DisplayAlerts = False
                     nwb.SaveAs Filename:=myFolder & nws.Name & ".xlsx", FileFormat:=xlWorkbookDefault
