@@ -13,7 +13,7 @@ Set rng = ws.Range("G11")
 Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\" '저장폴더경로
 
 For i = 1 To 10
-rng = ws.Range("A" & i)
+rng = ws.Range("A" & i) '저장할 파일명을 포함하고 있는 범위
 
 ws.Copy
 
