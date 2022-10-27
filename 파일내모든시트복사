@@ -12,8 +12,8 @@ Dim myDate As String
 
 For i = 1 To 4
 
-origPath = "C:\Users\Jiho\OneDrive\Mercer\File.xlsx"
-newPath = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\"
+origPath = "C:\Users\Jiho\OneDrive\Mercer\File.xlsx" '현재파일경로
+newPath = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\" '저장폴더경로
 
 Set origWB = Workbooks.Open(origPath)
 Set ows = origWB.Worksheets("Template")
