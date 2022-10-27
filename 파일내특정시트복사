@@ -1,0 +1,41 @@
+Sub myFiles()
+
+Dim wb As Workbook
+Dim ws As Worksheet
+Dim nwb As Workbook
+Dim nws As Worksheet
+Dim rng As Range
+Dim Path As String
+
+Set wb = ThisWorkbook
+Set ws = wb.Worksheets("Position Profile")
+Set rng = ws.Range("G11")
+Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\"
+
+For i = 1 To 10
+rng = ws.Range("A" & i)
+
+ws.Copy
+
+Set nwb = ActiveWorkbook
+Set nws = nwb.Worksheets("Position Profile")
+
+With nws
+Cells.Copy
+Cells.PasteSpecial (xlPasteValues)
+End With
+
+For Each nws In ActiveWorkbook.Sheets
+        nws.Range("A1:A10").ClearContents
+    Next
+
+Application.DisplayAlerts = False
+nwb.SaveAs FileName:=Path & rng & ".xlsx", FileFormat:=xlWorkbookDefault
+nwb.Close
+Application.DisplayAlerts = True
+
+Next i
+
+
+
+End Sub
