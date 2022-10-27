@@ -3,6 +3,8 @@ Sub CombineFiles()
     Dim tempFile As FileDialog
     Dim MainBook, sourceBook As Workbook
     Dim Sheet As Worksheet
+    Dim Path As String
+    Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs" '저장폴더경로
     Set MainBook = Application.ActiveWorkbook
     Set tempFile = Application.FileDialog(msoFileDialogFilePicker)
     tempFile.AllowMultiSelect = True
@@ -15,5 +17,5 @@ Sub CombineFiles()
         sourceBook.Close
         MainBook.Worksheets(1).Name = MainBook.Worksheets(1).Range("L2")
     Next i
-    MainBook.SaveAs Filename:= "C:\Users\Jiho\OneDrive\Mercer\NewDocs" & MainBook.Worksheets(1).Range("C6") & "_" & MainBook.Worksheets(1).Range("D6") & "_" & MainBook.Worksheets(1).Range("C7") & ".xlsx" , FileFormat:=xlWorkbookDefault 
+    MainBook.SaveAs Filename:= Path & MainBook.Worksheets(1).Range("C6") & "_" & MainBook.Worksheets(1).Range("D6") & "_" & MainBook.Worksheets(1).Range("C7") & ".xlsx" , FileFormat:=xlWorkbookDefault 
 End Sub
