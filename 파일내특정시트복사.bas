@@ -10,8 +10,14 @@ Dim Path As String
 Set wb = ThisWorkbook
 Set ws = wb.Worksheets("Position Profile") '복사할 시트 
 Set rng = ws.Range("G11")
-Path = "C:\Users\Jiho\OneDrive\Mercer\NewDocs\" '저장폴더경로
-
+Set FldrPicker = Application.FileDialog(msoFileDialogFolderPicker)
+    
+    With FldrPicker
+    .Title = "저장폴더선택"
+    .AllowMultiSelect = False
+    If .Show <> -1 Then Exit Sub
+    myFolder = .SelectedItems(1) & "\"
+                                                                
 For i = 1 To 10
 rng = ws.Range("A" & i) '저장할 파일명을 포함하고 있는 범위
 
@@ -30,7 +36,7 @@ For Each nws In ActiveWorkbook.Sheets
     Next
 
 Application.DisplayAlerts = False
-nwb.SaveAs FileName:=Path & rng & ".xlsx", FileFormat:=xlWorkbookDefault
+nwb.SaveAs FileName:=myFolder & rng & ".xlsx", FileFormat:=xlWorkbookDefault
 nwb.Close
 Application.DisplayAlerts = True
 
