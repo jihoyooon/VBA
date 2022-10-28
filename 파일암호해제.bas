@@ -1,7 +1,7 @@
 Sub Decrypt()
 
-Dim FileNames As Variant, i As Integer, j As Integer
-Dim TWB As Workbook, aWB As Workbook
+Dim FileNames As Variant, i As Integer
+Dim TWB As Workbook
 Dim wPath As String
 Dim fso As Object, folder As Object
 
