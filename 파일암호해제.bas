@@ -4,10 +4,8 @@ Dim FileNames As Variant, i As Integer, j As Integer
 Dim TWB As Workbook, aWB As Workbook
 Dim wPath As String
 Dim fso As Object, folder As Object
-Dim pw As String
 
 Set TWB = ThisWorkbook
-pw = TWB.Worksheets(1).Range("B1").Value
 Application.ScreenUpdating = False
 
 MsgBox ("파일을 선택하세요")
@@ -25,8 +23,7 @@ Set folder = fso.getfolder(wPath)
     
 
 For i = 1 To UBound(FileNames)
-
-Workbooks.Open FileNames(i), Password:=pw
+Workbooks.Open FileNames(i), Password:="1234" '패스워드입력
 ActiveWorkbook.SaveAs Filename:=folder & "\" & ActiveWorkbook.Name, Password:=""
 ActiveWorkbook.Close
 
